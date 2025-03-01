@@ -27,17 +27,18 @@ def generate_nums(number, count, nums_list):
     nums_list.append(number)
 
 def check_if_divisible(number, nums_list, divisor):
-  if number % int(divisor) == 0: #ако числото се дели на делителя го добавяме към списъка с делящите се числа
-      nums_list_2.append(number)
+  for num in nums_list: #обхождаме масива с изтеглените числа
+    if num % int(divisor) == 0: #ако числото се дели на делителя 
+        nums_list_2.append(num) #го добавяме към списъка с делящите се числа
 
 def print_initial_nums(nums_arr):
   print("Изтеглени числа:")
-  print(np.array2string(nums_arr, separator=", ")) #принтираме изтеглените числа
+  print(*nums_arr, sep = ", ") #принтираме изтеглените числа
 
 def check_array_empty(nums_arr_2, divisor):
   if len(nums_arr_2) != 0: #ако масивът не е празен
     print("Числа, делящи се на {}:".format(divisor))
-    print(np.array2string(nums_arr_2, separator=", ")) #принтираме делящите се числа
+    print(*nums_arr_2, sep = ", ") #принтираме делящите се числа
   else: #ако масивът е празен
     print("Няма числа, делящи се на {}".format(divisor))
 
